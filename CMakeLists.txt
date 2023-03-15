@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.23)
+project(Jumper)
+
+set(CMAKE_CXX_STANDARD 14)
+add_subdirectory(Test)
+add_executable(Jumper main.cpp Source/Entity.cpp Header/Entity.h Source/Player.cpp Header/Player.h Source/Ball.cpp Header/Ball.h Source/Platform.cpp Header/Platform.h Source/PowerUp.cpp Header/PowerUp.h Source/Heart.cpp Header/Heart.h Source/HealthBar.cpp Header/HealthBar.h Source/Map.cpp Header/Map.h)
+set (SFML_STATIC_LIBRARIES TRUE)
+set (SFML_DIR C:/SFML/lib/cmake/SFML)
+find_package(SFML COMPONENTS system window graphics audio network REQUIRED)
+include_directories(C:/SFML/include)
+target_link_libraries(Jumper sfml-system sfml-window sfml-graphics sfml-audio)
